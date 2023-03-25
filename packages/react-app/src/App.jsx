@@ -261,6 +261,13 @@ function App(props) {
 
   const faucetAvailable = localProvider && localProvider.connection && targetNetwork.name.indexOf("local") !== -1;
 
+
+  const [proposalName, setProposalName] = useState("");
+  const [beneficiary, setBeneficiary] = useState("");
+  const [amount, setAmount] = useState(0);
+  const [durationInDays, setDurationInDays] = useState(0);
+  const [proposals, setProposals] = useState([]);
+
   return (
     <div className="App">
       {/* ✏️ Edit the header and change the title to your project name */}
@@ -268,6 +275,10 @@ function App(props) {
         {/* 👨‍💼 Your account is in the top right with a wallet at connect options */}
         <div style={{ position: "relative", display: "flex", flexDirection: "column" }}>
           <div style={{ display: "flex", flex: 1 }}>
+
+          <div>
+
+        </div>
             {USE_NETWORK_SELECTOR && (
               <div style={{ marginRight: 20 }}>
                 <NetworkSwitch
@@ -289,6 +300,8 @@ function App(props) {
               logoutOfWeb3Modal={logoutOfWeb3Modal}
               blockExplorer={blockExplorer}
             />
+
+
           </div>
         </div>
       </Header>
