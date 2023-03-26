@@ -5,7 +5,6 @@ import "hardhat/console.sol";
 // import "@openzeppelin/contracts/access/Ownable.sol"; 
 // https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol
 
-
 contract YourContract {
     string public proposalName;
     string public proposalDescription;
@@ -50,6 +49,7 @@ contract YourContract {
             require(sent, "Failed to send Ether");
         }
     }
+
     function payContract(uint256 _contractPayment) external payable {
   }
 }

@@ -1,4 +1,4 @@
-packages/subgraph/generated
+packages/subgraph
 packages/subgraph/abis/*
 packages/hardhat/*.txt
 **/aws.json
@@ -13,6 +13,7 @@ packages/react-app/src/contracts/*
 packages/hardhat/cache*
 packages/**/data
 !packages/react-app/src/contracts/contracts.js
+
 
 
 # ts
