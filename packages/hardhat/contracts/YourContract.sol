@@ -41,16 +41,15 @@ contract YourContract {
         }
     }
     
-    function isPassed() public view returns (bool) {
-        return votesFor > votesAgainst;
-    }
-    
-    function finalize() public {
+    function finalize() public payable {
         require(!finalized, "Already finalized");
         require(block.timestamp >= end, "Voting period has not ended yet");
         finalized = true;
-        if(isPassed()) {
-            payable(beneficiary).transfer(amount);
+        if(votesFor > votesAgainst) {
+            (bool sent,) = beneficiary.call{value: amount}("");
+            require(sent, "Failed to send Ether");
         }
     }
+    function payContract(uint256 _contractPayment) external payable {
+  }
 }
